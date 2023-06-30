@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 
 TransactionHistory.prototypes = {
-  items : PropTypes.arrayOf(PropTypes.object)
+  items : PropTypes.arrayOf(PropTypes.shape({
+    id : PropTypes.string,  
+    type : PropTypes.string, 
+    amount : PropTypes.number, 
+    currency : PropTypes.string
+  }))
 }
 
 
