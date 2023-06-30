@@ -1,8 +1,19 @@
 import PropTypes from 'prop-types';
 
+Statistics.prototypes = {
+  title : PropTypes.string,
+  stats : PropTypes.arrayOf(PropTypes.object)
+}
+
+
 export function Statistics(props) {
 
-  const MarkUp = props.stats.map(({id, label, percentage}) => {
+  const {
+    title,
+    stats
+  } = props;
+
+  const MarkUp = stats.map(({id, label, percentage}) => {
     return (
       <li class="item" key={id}>
             <span class="label">{label}</span>
@@ -10,13 +21,14 @@ export function Statistics(props) {
       </li>
       )
     });
+    
 
   return ( 
     <section class="statistics">
-      <h2 class="title">Upload stats</h2>
-         {MarkUp }
+      {title && (<h2 class="title">{title}</h2>)}
+         
       <ul class="stat-list">
-  
+         {MarkUp }
       </ul>
     </section>)
 };
