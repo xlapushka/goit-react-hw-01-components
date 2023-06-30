@@ -1,7 +1,10 @@
-import user from "user";
-import data from "data";
+import user from "./json/user";
+import data from "./json/data";
+import friends from "./json/friends";
 import {Profile} from './profile/profile';
 import {Statistics} from "./statistics/statistics";
+import {FriendList} from "./friendlist/friendList";
+
 
 export const App = () => {
   return (<>
@@ -20,6 +23,11 @@ export const App = () => {
     {/* <Statistics 
       stats={data} 
     /> */}
+
+    <FriendList 
+      friends={friends} 
+    />;
+
 
 
   </>)
