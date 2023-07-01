@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import {FriendListItem} from './friendListItem'
+import css from './friendList.module.css'
 
 FriendList.prototypes = {
   friends : PropTypes.arrayOf(PropTypes.object)
@@ -16,7 +17,7 @@ export function FriendList(props) {
   })
 
   return (
-    <ul class="friend-list">
+    <ul className={css.friendList}>
       {FriendList}  
     </ul>)
   }

@@ -1,0 +1,48 @@
+.statistics {
+  background-color: #FFFFFF;
+
+  width: 75%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 0.5px solid #a9aaaa;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+  display: flex;
+  gap: 12px;
+  font-weight: bold;
+
+  /* background: linear-gradient(to right, #e66465 50%, #FFFFFF 50%); */
+}
+
+.title {
+  text-align: center;
+  width: 200px
+}
+
+.statList {
+  display: flex;
+  flex-direction: row;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 50%), 0 4px 8px rgb(0 0 0 / 5%);
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+  width: 400%;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 50%), 0 4px 8px rgb(0 0 0 / 5%);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4px;
+  padding: 4px;
+}
+
+.label, .percentage {
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 1px 1px 2px #a9aaaa;
+}

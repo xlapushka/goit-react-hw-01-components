@@ -1,0 +1,51 @@
+
+p {
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.profile {
+  background-color: #FFFFFF;
+
+  width: 75%;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 0.5px solid #a9aaaa;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+
+  display: flex;
+  gap: 12px;
+  font-weight: bold;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 50%), 0 4px 8px rgb(0 0 0 / 5%);
+}
+
+.avatar {
+  padding: 4px;
+  width: 200px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.stats li {
+  padding-bottom: 4px;
+}
+
+
+
+

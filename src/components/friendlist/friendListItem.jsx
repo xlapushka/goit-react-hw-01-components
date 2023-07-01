@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { RiCheckboxBlankCircleFill } from "react-icons/ri";
+import css from './friendList.module.css';
 
 FriendListItem.prototypes = {
   id : PropTypes.number,
@@ -18,10 +20,13 @@ export function FriendListItem(props) {
   
 
   return (
-    <li class="item" key={id}>
-      <span class="status">{isOnline ? 'green' : 'red'}</span>
-      <img class="avatar" src={avatar} alt={name} width="48" />
-      <p class="name">{name}</p>
+    <li className={css.item} key={id}>
+      <span className={css.status}>
+        {isOnline ? < RiCheckboxBlankCircleFill color='#8bc62b'/> : < RiCheckboxBlankCircleFill color='#fc3a28' />}
+      </span>
+      <img className={css.avatar} src={avatar} alt={name} width="48" />
+      <p className={css.name}>{name}</p>
     </li>
   )
 }
+
