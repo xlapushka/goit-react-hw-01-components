@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './statistics.module.css'
 
-Statistics.prototypes = {
+Statistics.propTypes = {
   title : PropTypes.string,
   stats : PropTypes.arrayOf(PropTypes.shape({
     id : PropTypes.string.isRequired, 
