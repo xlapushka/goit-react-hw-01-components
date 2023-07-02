@@ -3,10 +3,10 @@ import css from './transactionHistory.module.css'
 
 TransactionHistory.prototypes = {
   items : PropTypes.arrayOf(PropTypes.shape({
-    id : PropTypes.string,  
-    type : PropTypes.string, 
-    amount : PropTypes.number, 
-    currency : PropTypes.string
+    id : PropTypes.string.isRequired,  
+    type : PropTypes.string.isRequired, 
+    amount : PropTypes.number.isRequired, 
+    currency : PropTypes.string.isRequired
   }))
 }
 
@@ -15,27 +15,6 @@ export function TransactionHistory(props) {
   const {
     items
   } = props;
-
-  const MarkUp = items.map(({id, type, amount, currency}, i) => {
-   
-    if (i % 2 !== 0) {
-      return (
-        <tr key={id} style={{background: '#ededed'}}>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
-        )
-    } else { 
-      return (
-        <tr key={id}>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
-        )
-    }
-  });
   
 
   return (
@@ -49,7 +28,16 @@ export function TransactionHistory(props) {
     </thead>
 
     <tbody>
-        {MarkUp}
+        {items.map(({id, type, amount, currency}, i) => {
+            return (
+              <tr key={id} style={(i % 2 !== 0) ? {background: '#ededed'} : {background: 'inherit'}}>
+                <td>{type}</td>
+                <td>{amount}</td>
+                <td>{currency}</td>
+              </tr>
+              )
+        })
+ }
     </tbody>
   </table>
   )

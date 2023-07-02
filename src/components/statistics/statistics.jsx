@@ -4,9 +4,9 @@ import css from './statistics.module.css'
 Statistics.prototypes = {
   title : PropTypes.string,
   stats : PropTypes.arrayOf(PropTypes.shape({
-    id : PropTypes.string, 
-    label :PropTypes.string, 
-    percentage : PropTypes.number
+    id : PropTypes.string.isRequired, 
+    label :PropTypes.string.isRequired, 
+    percentage : PropTypes.number.isRequired
   }))
 }
 
@@ -25,21 +25,30 @@ export function Statistics(props) {
   } = props;
 
   
-  const MarkUp = stats.map(({id, label, percentage}) => {
-    return (
-      <li className={css.item} key={id} style={{background: `${Color()}`, width: `${percentage}%`}}>
-            <span className={css.label}>{label}</span>
-            <span className={css.percentage}>    {percentage}%</span>
-      </li>
-      )
-    });
+  // const MarkUp = stats.map(({id, label, percentage}) => {
+  //   return (
+  //     <li className={css.item} key={id} style={{background: `${Color()}`, width: `${percentage}%`}}>
+  //           <span className={css.label}>{label}</span>
+  //           <span className={css.percentage}>    {percentage}%</span>
+  //     </li>
+  //     )
+  //   });
 
   return ( 
     <section className={css.statistics}>
       {title && (<h2 className={css.title}>{title}</h2>)}
          
       <ul className={css.statList}>
-         {MarkUp }
+         {stats.map(({id, label, percentage}) => {
+            return (
+              <li className={css.item} key={id} style={{background: `${Color()}`, width: `${percentage}%`}}>
+                    <span className={css.label}>{label}</span>
+                    <span className={css.percentage}>    {percentage}%</span>
+              </li>
+              )
+            }) 
+          }
       </ul>
-    </section>)
+    </section>
+  )
 };
